@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+
+    <style>
+        body {
+            background-color: orange;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        h1 {
+            text-decoration: underline;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 15px 0 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Adds space between checkboxes */
+            flex-wrap: wrap;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background: orange;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background: darkorange;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 80%;
+            }
+
+            .checkbox-group {
+                flex-direction: column; /* Stacks checkboxes on small screens */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Survey Form</h1>
+    <h3>User Stories Survey Form</h3>
+
+    <div class="container">
+        <form action="/action_page.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="experience">Work Experience (Years):</label>
+            <input type="number" id="experience" name="experience" placeholder="Enter years of experience" min="0" required>
+
+            <label for="real-estate">Are you comfortable investing in real estate on a platform without first investigating properly?</label>
+            <select id="real-estate" name="real_estate" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="suggestions">Suggestions to build trusted platforms:</label>
+            <textarea id="suggestions" name="suggestions" rows="3" placeholder="Your suggestions"></textarea>
+
+            <label>You are ready to invest in:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="realestate" name="investment" value="Real Estate"> Real Estate</label>
+                <label><input type="checkbox" id="mutualfunds" name="investment" value="Mutual Funds"> Mutual Funds</label>
+                <label><input type="checkbox" id="crypto" name="investment" value="Crypto Currency"> Crypto Currency</label>
+            </div>
+
+            <label>Are you ready for further contact?</label>
+            <div>
+                <label><input type="radio" id="yes" name="contact" value="Yes" required> Yes</label>
+                <label><input type="radio" id="no" name="contact" value="No"> No</label>
+            </div>
+
+            <br>
+           <br><a href="" style="color: white; text-decoration: none; margin: 0 10px;"><input type="submit" value="Submit"></a>
+        </form>
+    </div>
+
+</body>
+
+</html>
